@@ -1,15 +1,17 @@
 package com.dev.dao;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
 import com.dev.beans.UserInfo;
+import com.dev.utils.HibernateUtils;
 
-public class HibernateImpl implements UserInfoDAO {
+public class HibernateImpl implements UserInfoDAO 
+{
+	SessionFactory factory = HibernateUtils.getSessionFactory();
 
-	@Override
-	public boolean CreateProfile(UserInfo user) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
+	
+	
 	@Override
 	public UserInfo login(int id, String pass) {
 		// TODO Auto-generated method stub
@@ -28,5 +30,33 @@ public class HibernateImpl implements UserInfoDAO {
 		return false;
 	}
 
+	@Override
+	public boolean createProfile(UserInfo user)
+	{
+		Session session = null;
+		System.out.println("inside create profile");
+		try
+		{
+			session = factory.openSession();
+			session.beginTransaction();
+			session.save(user);
+			session.getTransaction().commit();
+			System.out.println("Pass");
+			return true;
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			System.out.println("somethings wrong");
+			return false;
+		}
+		finally 
+		{
+			if(session != null)
+				session.close();
+		}
+	}
+
+	
 	}
 

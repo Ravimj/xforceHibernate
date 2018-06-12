@@ -15,7 +15,6 @@ import com.dev.beans.UserInfo;
 
 public class JDBCImpl implements UserInfoDAO{
 
-	@Override
 	public boolean CreateProfile(UserInfo user) {
 		
 		Connection con = null;
@@ -259,6 +258,14 @@ public class JDBCImpl implements UserInfoDAO{
 	public String toString()
 	{
 	return "JDBC";	
+	}
+
+
+
+	@Override
+	public boolean createProfile(UserInfo user) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
