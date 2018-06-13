@@ -23,7 +23,7 @@ public class BiDir
 		t2.setName("bmb");
 		t2.setSubject("histry");
 		
-		Set<Teacher_Bidirectional> ts = new HashSet<Teacher_Bidirectional>();
+		HashSet<Teacher_Bidirectional> ts = new HashSet<Teacher_Bidirectional>();
 		ts.add(t1);
 		ts.add(t2);
 		

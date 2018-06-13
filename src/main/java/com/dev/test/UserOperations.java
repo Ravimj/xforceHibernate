@@ -18,7 +18,7 @@ public class UserOperations {
 
 		System.out.println("started");
 		UserInfo user = new UserInfo();
-		user.setUser_id(777);
+		user.setUser_id(2);
 		user.setFirstname("Ram");
 		user.setLastname("kumar");
 		user.setEmail("ram@g.com");

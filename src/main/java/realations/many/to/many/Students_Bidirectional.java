@@ -34,7 +34,7 @@ public class Students_Bidirectional
 												(name="student_id")
 												,inverseJoinColumns=
 												@JoinColumn(name="teacher_id"))
-	private Set<Teacher_Bidirectional> teachers = null;
+	private Set<Teacher_Bidirectional> teachers ;
 	
 	
 	
